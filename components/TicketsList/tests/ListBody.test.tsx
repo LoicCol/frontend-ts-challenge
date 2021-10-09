@@ -3,6 +3,7 @@ import { ListBody } from '../ListBody';
 import { useTickets } from '../../../hooks/useTickets';
 import { createFakeTickets } from '../../../mocks/tickets.mock';
 
+jest.mock('react-query');
 jest.mock('../../../hooks/useTickets');
 
 const tickets = createFakeTickets();

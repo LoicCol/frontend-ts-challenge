@@ -48,7 +48,7 @@ const DeleteIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7.00003H6V19ZM8 9.00003H16V19H8V9.00003ZM15.5 4.00003L14.5 3.00003H9.5L8.5 4.00003H5V6.00003H19V4.00003H15.5Z"
         fill="black"
-        fill-opacity="0.54"
+        fillOpacity="0.54"
       />
     </svg>
   );
