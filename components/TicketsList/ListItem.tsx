@@ -81,7 +81,6 @@ const ListItemDefault: FC<Ticket> = ({ id, user, status, createdAt, dueDate }) =
 
 const ListItemSmallScreen: FC<Ticket> = ({ id, user, status, createdAt, dueDate }) => {
   const classes = useStyles();
-  const theme = useTheme();
 
   const createdAtFormatted = formatToDate(createdAt);
   const dueDateFormatted = formatToDate(dueDate);
