@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) =>
     root: {
       borderBottom: '1px solid #F1F1F1',
       padding: theme.spacing(2, 1.5),
+      [theme.breakpoints.down('sm')]: {
+        borderBottom: '1px solid #F1F1F1',
+        padding: theme.spacing(3),
+      },
     },
     text: {
       fontWeight: theme.typography.fontWeightLight,
@@ -23,11 +27,6 @@ const useStyles = makeStyles((theme) =>
       fontWeight: theme.typography.fontWeightBold,
       color: '#FFFFFF',
       backgroundColor: '#5B994C',
-    },
-    // Classes used for small screen
-    rootSmallScreen: {
-      borderBottom: '1px solid #F1F1F1',
-      padding: theme.spacing(3),
     },
     headerText: {
       fontSize: 12,
@@ -86,7 +85,7 @@ const ListItemSmallScreen: FC<Ticket> = ({ id, user, status, createdAt, dueDate 
   const dueDateFormatted = formatToDate(dueDate);
 
   return (
-    <Grid container spacing={3} className={classes.rootSmallScreen}>
+    <Grid container spacing={3} className={classes.root}>
       <Grid item xs={6}>
         <Typography className={classes.headerText}>ID</Typography>
         <Typography className={classes.text}>{id}</Typography>

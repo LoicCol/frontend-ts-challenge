@@ -6,22 +6,25 @@ import { ListBody } from './ListBody';
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      height: 'calc(100% - 66px)',
-      padding: theme.spacing(3),
+      [theme.breakpoints.up('sm')]: {
+        height: 'calc(100% - 66px)',
+        padding: theme.spacing(3),
+      },
+      [theme.breakpoints.down('sm')]: {
+        height: 'calc(100% - 66px)',
+      },
     },
     list: {
-      height: '100%',
-      background: '#FFFFFF',
-      borderRadius: 15,
-      padding: theme.spacing(2, 3, 4),
-    },
-    // Classes used for small screen
-    rootSmallScreen: {
-      height: 'calc(100% - 66px)',
-    },
-    listSmallScreen: {
-      height: '100%',
-      background: '#FFFFFF',
+      [theme.breakpoints.up('sm')]: {
+        height: '100%',
+        background: '#FFFFFF',
+        borderRadius: 15,
+        padding: theme.spacing(2, 3, 4),
+      },
+      [theme.breakpoints.down('sm')]: {
+        height: '100%',
+        background: '#FFFFFF',
+      },
     },
   })
 );
@@ -31,16 +34,10 @@ const TicketsList: FC = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
-  return matches ? (
+  return (
     <Box component="main" className={classes.root}>
       <Box className={classes.list}>
-        <ListHeader />
-        <ListBody />
-      </Box>
-    </Box>
-  ) : (
-    <Box component="main" className={classes.rootSmallScreen}>
-      <Box className={classes.listSmallScreen}>
+        {matches ? <ListHeader /> : null}
         <ListBody />
       </Box>
     </Box>
