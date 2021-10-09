@@ -3,6 +3,8 @@ import { Chip, createStyles, Grid, makeStyles, Typography } from '@material-ui/c
 import { Ticket } from '../../shared/types';
 import { format } from 'date-fns';
 
+import { DeleteButton } from './DeleteButton';
+
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -37,20 +39,23 @@ const ListItem: FC<Ticket> = ({ id, user, status, createdAt, dueDate }) => {
 
   return (
     <Grid container className={classes.root}>
-      <Grid item xs={1}>
+      <Grid item xs={2}>
         <Typography className={classes.text}>{id}</Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={2}>
         <Typography className={classes.text}>{`${user.firstName} ${user.lastName}`}</Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={2}>
         <Typography className={classes.text}>{createdAtFormatted}</Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={2}>
         <Typography className={classes.text}>{dueDateFormatted}</Typography>
       </Grid>
       <Grid item xs={2}>
         <Chip label={status} className={classes.status} />
+      </Grid>
+      <Grid item xs={2}>
+        <DeleteButton id={id} />
       </Grid>
     </Grid>
   );
