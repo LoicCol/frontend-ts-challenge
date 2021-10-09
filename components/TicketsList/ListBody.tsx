@@ -3,13 +3,14 @@ import { useTickets } from '../../hooks/useTickets';
 import { CenteredCircularProgress } from '../CenteredCircularProgress';
 import { NothingFound } from '../NothingFound';
 import { ListItem } from './ListItem';
-import { Box, createStyles, makeStyles } from '@material-ui/core';
+import { Box, createStyles, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       height: 'calc(100% - 49px)',
       overflowY: 'scroll',
+      overflowX: 'hidden',
     },
     listItem: {
       borderBottom: '1px solid #F1F1F1',
@@ -22,6 +23,7 @@ type ListBodyProps = {};
 
 const ListBody: FC<ListBodyProps> = () => {
   const classes = useStyles();
+
   const { isLoading, data: tickets } = useTickets();
 
   const isEmptyContent = !isLoading && !tickets?.length;
