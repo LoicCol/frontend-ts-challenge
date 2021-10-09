@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, createStyles, makeStyles, useTheme, useMediaQuery } from '@material-ui/core';
+import { Box, createStyles, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 import { ListHeader } from './ListHeader';
 import { ListBody } from './ListBody';
 
@@ -32,7 +32,7 @@ const TicketsList: FC = () => {
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   return matches ? (
-    <Box component="main" className={matches ? classes.root : classes.rootSmallScreen}>
+    <Box component="main" className={classes.root}>
       <Box className={classes.list}>
         <ListHeader />
         <ListBody />

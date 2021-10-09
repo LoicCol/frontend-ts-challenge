@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Chip, createStyles, Grid, makeStyles, Typography, useTheme, useMediaQuery } from '@material-ui/core';
+import { Chip, createStyles, Grid, makeStyles, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import { Ticket } from '../../shared/types';
 import { format } from 'date-fns';
 

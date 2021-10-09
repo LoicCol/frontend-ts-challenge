@@ -3,7 +3,7 @@ import { useTickets } from '../../hooks/useTickets';
 import { CenteredCircularProgress } from '../CenteredCircularProgress';
 import { NothingFound } from '../NothingFound';
 import { ListItem } from './ListItem';
-import { Box, createStyles, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
+import { Box, createStyles, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
